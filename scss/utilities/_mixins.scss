@@ -5,6 +5,7 @@
     content:'';
     background-color: $pure-white;
     transition: width .3s;
+    z-index: 1000;
 }
 
 @mixin heroImages($bgImg) {

@@ -54,6 +54,51 @@
     }
 }
 
+.nav{
+    position:fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-image: $blue-gradient-solid;
+    transform:translateX(100%);
+    transition: transform .5s cubic-bezier(0.65, 0.05, 0.35, 1);
+    z-index: 100;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    &--active{
+        transform:translateX(0%);
+    }
+
+    &__item{
+        position:relative;
+        display:block;
+        color:$pure-white;
+        margin: .5em 0em;
+        padding: .5em 2em;
+        text-decoration: none;
+
+        &::before{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height:100%;
+            transform:scaleY(0);
+            transition:transform .3s;
+            content:"";
+            background-color: $pure-white;
+        }
+        &:hover::before{
+            transform: scaleY(1);
+        }
+
+    }
+
+
+}
+
 //header
 .header{
     position: relative;
@@ -95,5 +140,44 @@
     }
 }
 
+
+// ====================
+// MEDIA 
+// ====================
+
+@media(min-width:768px){
+    .white-block{
+        height: 50px;
+        width:45%;
+    }
+    .header{
+        &__heading{
+            font-size: 6.6rem;
+        }
+
+        &__text{
+            font-style: 2.2rem;
+        }
+
+        &__btn{
+            font-size: 1.6rem;
+        }
+    }
+}
+
+@media(min-width: 992px){
+    .burger-btn{
+        top: 50px;
+        right: 50px;
+    }
+
+    .header{
+        background-image: $blue-gradient, url('../img/palm-desktop.jpg');
+
+        &__heading{
+            font-size: 10rem;
+        }
+    }
+}
 
 
